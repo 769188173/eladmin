@@ -46,7 +46,7 @@ public class LogController {
     @PreAuthorize("@el.check()")
     public ResponseEntity getLogs(LogQueryCriteria criteria, Pageable pageable){
         criteria.setLogType("INFO");
-        return new ResponseEntity<>(logService.queryAll(criteria,pageable), HttpStatus.OK);
+        return new RcesponseEntity<>(logService.queryAll(criteria,pageable), HttpStatus.OK);
     }
 
     @GetMapping(value = "/user")
